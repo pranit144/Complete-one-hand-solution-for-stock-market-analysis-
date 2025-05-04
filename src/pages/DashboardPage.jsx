@@ -107,7 +107,7 @@ function DashboardPage({ session, handleLogout }) {
             <Link to="/" className="flex items-center">
               <Sparkles className="h-6 w-6 text-primary mr-2" />
               <h1 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
-                FinanceGPT
+              StockInsight Pro
               </h1>
             </Link>
             <Button variant="outline" size="sm" onClick={handleLogout}>
@@ -208,7 +208,7 @@ function DashboardPage({ session, handleLogout }) {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center mb-4 md:mb-0">
               <Sparkles className="h-5 w-5 text-primary mr-2" />
-              <span className="font-medium">FinanceGPT</span>
+              <span className="font-medium">StockInsight Pro</span>
             </div>
             <div className="text-sm text-muted-foreground">
               <p>Powered by AI. Data for demonstration purposes only. Not financial advice.</p>

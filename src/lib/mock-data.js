@@ -347,53 +347,71 @@ export const mockAgents = [
     id: "market-analyst",
     name: "Market Analyst",
     description:
-      "Analyzes market trends, sector performance, and macroeconomic factors to provide a comprehensive market overview.",
+      "Analyzes market trends, sector performance, and macroeconomic factors to provide a comprehensive market overview.Market important graphs  and charts analyse using llms.",
     icon: "BarChart2",
     capabilities: [
       "Market trend analysis",
       "Sector rotation insights",
       "Economic indicator interpretation",
+      "Market sentiment evaluation",
     ],
-    url: "https://pranit144-sector-anaylsis.hf.space",
+    url: "https://pranit144-stock-market-data-all-ratio-anaylisis.hf.space",
   },
   {
-    id: "stock-researcher",
-    name: "Stock Researcher",
-    description:
-      "Conducts deep research on individual stocks, analyzing fundamentals, technicals, and company-specific news.",
-    icon: "Search",
-    capabilities: [
-      "Fundamental analysis",
-      "Technical analysis",
-      "Earnings assessment",
-    ],
-    url: "https://example.com/stock-research",
-  },
-  {
-    id: "portfolio-optimizer",
-    name: "Portfolio Optimizer",
-    description:
-      "Evaluates your current portfolio and suggests optimizations based on risk tolerance, goals, and market conditions.",
+    id: "sector-analysis",
+    name: "Sector Analysis",
+    description: "Performs in-depth analysis of entire market sectors, including performance trends, key metrics, and sector-specific news analyse  the top performing  sectors  .",
     icon: "PieChart",
-    capabilities: [
-      "Risk assessment",
-      "Diversification analysis",
-      "Rebalancing recommendations",
-    ],
-    url: "https://example.com/portfolio-optimizer",
+    capabilities:[
+      "Sector performance analysis",
+      "Comparative analysis of industries",
+      "Macro and microeconomic trend evaluation",
+      "Sector-specific news aggregation",
+  ],
+      url:"https://pranit144-sector-anaylsis.hf.space",
   },
   {
-    id: "news-analyzer",
-    name: "News Analyzer",
-    description:
-      "Processes financial news and determines potential market impact, sentiment, and trading opportunities.",
-    icon: "Newspaper",
-    capabilities: [
-      "Sentiment analysis",
-      "News impact assessment",
-      "Event-driven insights",
-    ],
-    url: "https://example.com/news-analyzer",
+    id: "deep-stock-analyzer",
+name: "Deep Stock Analyzer",
+description:
+  "An AI-powered agent using LLMs to perform deep analysis of individual stocks, combining fundamental data, technical indicators, earnings insights, and real-time news.",
+icon: "BarChart",
+capabilities: [
+  "LLM-powered fundamental and technical analysis",
+  "Earnings and sentiment analysis",
+  "Real-time news impact evaluation",
+  "Stock scoring and investment suitability",
+],
+url: "http://localhost:5002",
+  },
+  {
+    id: "company-personalized-analysis",
+name: "Company Analysis",
+description:
+  "Delivers tailored analysis for individual companies using AI and LLMs, covering financials, strategic positioning, SWOT insights, and recent developments.",
+icon: "Building",
+capabilities: [
+  "Custom company profiling",
+  "Financial and strategic analysis",
+  "SWOT and risk insights",
+  "LLM-powered news and report summarization",
+],
+url: "https://pranit144-tickerinfodata.hf.space",
+
+  },{
+    id: "mutual-fund-analysis",
+name: "Mutual Fund Analysis",
+description:
+  "Analyzes mutual funds using AI and LLMs, providing insights into fund performance, portfolio composition, risk metrics, and management strategy.",
+icon: "TrendingUp",
+capabilities: [
+  "Fund performance evaluation",
+  "Portfolio and asset allocation analysis",
+  "Risk-return profiling",
+  "LLM-powered summary of holdings and strategy",
+],
+url: "https://pranit144-newspce.hf.space",
+
   },
 ];
 

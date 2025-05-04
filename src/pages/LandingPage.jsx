@@ -52,7 +52,7 @@ const LandingPage = ({ session, setSession }) => {
         <div className="flex items-center">
           <Sparkles className="h-6 w-6 text-primary mr-2" />
           <h1 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
-            FinanceGPT
+          StockInsight Pro
           </h1>
         </div>
         {session ? (
@@ -87,7 +87,7 @@ const LandingPage = ({ session, setSession }) => {
             Unlock Financial Insights with <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">AI Power</span>
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-10">
-            FinanceGPT combines cutting-edge AI with real-time market data to help you make smarter investment decisions. Analyze stocks, optimize portfolios, and stay ahead of the market.
+          StockInsight Pro combines cutting-edge AI with real-time market data to help you make smarter investment decisions. Analyze stocks, optimize portfolios, and stay ahead of the market.
           </p>
           <motion.div
             whileHover={{ scale: 1.05 }}
@@ -116,7 +116,7 @@ const LandingPage = ({ session, setSession }) => {
           transition={{ staggerChildren: 0.2 }}
           className="mt-24"
         >
-          <h3 className="text-3xl font-bold mb-12">Why Choose FinanceGPT?</h3>
+          <h3 className="text-3xl font-bold mb-12">Why Choose StockInsight Pro?</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {features.map((feature, index) => (
               <motion.div key={index} variants={featureVariants}>
@@ -155,7 +155,7 @@ const LandingPage = ({ session, setSession }) => {
                 <Dialog open={isAuthModalOpen} onOpenChange={setIsAuthModalOpen}>
                   <DialogTrigger asChild>
                      <Button size="lg">
-                       Launch FinanceGPT
+                       Launch StockInsight Pro
                      </Button>
                   </DialogTrigger>
                   <DialogContent className="sm:max-w-[425px]">
@@ -172,7 +172,7 @@ const LandingPage = ({ session, setSession }) => {
       </main>
 
       <footer className="container mx-auto px-4 py-8 text-center text-muted-foreground text-sm">
-        © {new Date().getFullYear()} FinanceGPT. All rights reserved. Not financial advice.
+        © {new Date().getFullYear()} StockInsight Pro. All rights reserved. Not financial advice.
       </footer>
     </div>
   );
