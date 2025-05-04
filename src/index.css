@@ -1,0 +1,406 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* New Theme Variables */
+    --primary-color: #2c3e50;
+    --secondary-color: #34495e;
+    --accent-color: #3498db;
+    --success-color: #27ae60;
+    --warning-color: #f39c12;
+    --danger-color: #e74c3c;
+    --light-bg: #f8f9fa;
+    --dark-bg: #343a40;
+
+    /* Mapped Tailwind Variables (using new theme colors) */
+    --background: 210 11% 96%; /* Light BG */
+    --foreground: 210 17% 20%; /* Dark Text */
+    
+    --card: 255 100% 100%; /* White */
+    --card-foreground: 210 17% 20%; /* Dark Text */
+    
+    --popover: 255 100% 100%; /* White */
+    --popover-foreground: 210 17% 20%; /* Dark Text */
+    
+    --primary: 207 65% 55%; /* Accent Color */
+    --primary-foreground: 255 100% 100%; /* White Text */
+    
+    --secondary: 210 22% 28%; /* Secondary Color */
+    --secondary-foreground: 255 100% 100%; /* White Text */
+    
+    --muted: 210 11% 96%; /* Light BG */
+    --muted-foreground: 215 14% 34%; /* Grayish Text */
+    
+    --accent: 210 11% 96%; /* Light BG */
+    --accent-foreground: 207 65% 55%; /* Accent Color */
+    
+    --destructive: 3 78% 56%; /* Danger Color */
+    --destructive-foreground: 255 100% 100%; /* White Text */
+    
+    --border: 220 13% 91%; /* Light Gray Border */
+    --input: 220 13% 91%; /* Light Gray Input Border */
+    --ring: 207 65% 55%; /* Accent Color for focus ring */
+    
+    --radius: 0.5rem;
+  }
+
+  .dark {
+     /* Define dark mode variables if needed, mapping from the provided theme */
+     --background: 210 10% 23%; /* Dark BG */
+     --foreground: 210 20% 98%; /* Light Text */
+     
+     --card: 210 10% 23%; /* Dark BG */
+     --card-foreground: 210 20% 98%; /* Light Text */
+     
+     --popover: 210 10% 23%; /* Dark BG */
+     --popover-foreground: 210 20% 98%; /* Light Text */
+     
+     --primary: 207 65% 55%; /* Accent Color */
+     --primary-foreground: 255 100% 100%; /* White Text */
+     
+     --secondary: 210 22% 28%; /* Secondary Color */
+     --secondary-foreground: 255 100% 100%; /* White Text */
+     
+     --muted: 210 22% 28%; /* Secondary Color */
+     --muted-foreground: 215 14% 64%; /* Lighter Grayish Text */
+     
+     --accent: 210 22% 28%; /* Secondary Color */
+     --accent-foreground: 210 20% 98%; /* Light Text */
+     
+     --destructive: 3 78% 56%; /* Danger Color */
+     --destructive-foreground: 255 100% 100%; /* White Text */
+     
+     --border: 210 22% 28%; /* Secondary Color */
+     --input: 210 22% 28%; /* Secondary Color */
+     --ring: 207 65% 55%; /* Accent Color */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* padding-bottom: 40px; Removed as layout handles spacing */
+    background-color: #f5f7fa; /* Direct application from theme */
+    color: #333; /* Direct application from theme */
+  }
+}
+
+/* Existing Custom Styles */
+.gradient-bg {
+  background: linear-gradient(135deg, rgba(13, 71, 161, 0.6) 0%, rgba(33, 150, 243, 0.4) 100%);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.75); /* Adjusted for light theme */
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.dark .glass-card {
+   background: rgba(17, 25, 40, 0.75); /* Original dark mode glass */
+   backdrop-filter: blur(16px);
+   border: 1px solid rgba(255, 255, 255, 0.125);
+}
+
+
+.chat-bubble {
+  position: relative;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  max-width: 80%;
+  margin-bottom: 1rem;
+}
+
+.chat-bubble.user {
+  background-color: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+  margin-left: auto;
+  border-bottom-right-radius: 0;
+}
+
+.chat-bubble.bot {
+  background-color: hsl(var(--secondary));
+  color: hsl(var(--secondary-foreground));
+  margin-right: auto;
+  border-bottom-left-radius: 0;
+}
+
+.typing-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.typing-indicator span {
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: hsl(var(--muted-foreground));
+  border-radius: 50%;
+  animation: typing-bounce 1.4s infinite ease-in-out;
+}
+
+.typing-indicator span:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.typing-indicator span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typing-indicator span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes typing-bounce {
+  0%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-0.5rem);
+  }
+}
+
+.stock-card {
+  transition: all 0.3s ease;
+}
+
+.stock-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1); /* Adjusted shadow for light theme */
+}
+
+.dark .stock-card:hover {
+   box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3); /* Original dark shadow */
+}
+
+.grid-pattern {
+  background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px), /* Adjusted for light theme */
+    linear-gradient(90deg, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.dark .grid-pattern {
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px), /* Original dark pattern */
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+}
+
+
+.agent-card {
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.agent-card:hover {
+  border-color: hsl(var(--primary));
+  transform: scale(1.02);
+}
+
+.shimmer {
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.05) 50%, /* Adjusted for light theme */
+    rgba(0, 0, 0, 0) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+.dark .shimmer {
+   background: linear-gradient( /* Original dark shimmer */
+     to right,
+     rgba(255, 255, 255, 0) 0%,
+     rgba(255, 255, 255, 0.1) 50%,
+     rgba(255, 255, 255, 0) 100%
+   );
+   background-size: 200% 100%;
+   animation: shimmer 2s infinite;
+}
+
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* New Theme Styles */
+.header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 30px 0;
+    margin-bottom: 30px;
+    border-bottom: 4px solid var(--accent-color);
+}
+
+.header h1 {
+    font-weight: 700;
+    margin: 0;
+    font-size: 2.2rem;
+}
+
+.header p {
+    opacity: 0.8;
+    margin-top: 5px;
+}
+
+.search-container {
+    background-color: white;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+}
+
+.btn-analyze {
+    background-color: var(--accent-color);
+    border: none;
+    font-weight: 600;
+    padding: 10px 25px;
+    transition: all 0.3s;
+    color: white; /* Added for better contrast */
+    border-radius: 0.375rem; /* Match Tailwind's default */
+}
+
+.btn-analyze:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.stock-input {
+    font-size: 1.1rem;
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+}
+
+.stock-input:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 0.25rem rgba(52, 152, 219, 0.25);
+    outline: none; /* Prevent default outline */
+}
+
+.results-container {
+    background-color: white;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+}
+
+.nav-tabs {
+    border-bottom: 2px solid #e0e0e0;
+    margin-bottom: 20px;
+}
+
+.nav-tabs .nav-link {
+    color: #495057;
+    font-weight: 600;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 0;
+    background-color: transparent; /* Ensure no background */
+}
+
+.nav-tabs .nav-link.active {
+    color: var(--accent-color);
+    background-color: transparent;
+    border-bottom: 3px solid var(--accent-color);
+}
+
+.chart-container {
+    position: relative;
+    height: 400px;
+    margin-bottom: 20px;
+}
+
+.metrics-card {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-left: 4px solid var(--accent-color);
+}
+
+.metrics-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #6c757d;
+    margin-bottom: 5px;
+}
+
+.metrics-value {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #2c3e50;
+}
+
+.analysis-content {
+    line-height: 1.7;
+    font-size: 1rem;
+}
+
+.analysis-content h1, .analysis-content h2, .analysis-content h3 {
+    color: var(--primary-color);
+    margin-top: 20px;
+}
+
+.analysis-content table {
+    width: 100%;
+    margin-bottom: 1rem;
+    border-collapse: collapse;
+}
+
+.analysis-content table th, .analysis-content table td {
+    padding: 8px;
+    border: 1px solid #dee2e6;
+    text-align: left; /* Ensure consistent alignment */
+}
+
+.analysis-content table th {
+    background-color: #f8f9fa;
+    font-weight: 600; /* Make headers bold */
+}
+
+.loading {
+    display: none; /* Will be controlled by JS/React state */
+    text-align: center;
+    padding: 30px;
+}
+
+.spinner-border {
+    width: 3rem;
+    height: 3rem;
+    color: var(--accent-color);
+    border-width: 0.25em; /* Standard spinner thickness */
+    animation: spinner-border .75s linear infinite; /* Add animation */
+}
+
+@keyframes spinner-border {
+  to { transform: rotate(360deg); }
+}
+
+
+@media (max-width: 768px) {
+    .header {
+        padding: 20px 0;
+    }
+    .header h1 {
+        font-size: 1.8rem;
+    }
+    .search-container, .results-container {
+        padding: 15px;
+    }
+}
