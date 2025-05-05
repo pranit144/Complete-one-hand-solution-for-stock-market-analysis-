@@ -355,7 +355,7 @@ export const mockAgents = [
       "Economic indicator interpretation",
       "Market sentiment evaluation",
     ],
-    url: "https://pranit144-stock-market-data-all-ratio-anaylisis.hf.space",
+    url: "http://127.0.0.1:5001",
   },
   {
     id: "sector-analysis",
@@ -382,7 +382,7 @@ capabilities: [
   "Real-time news impact evaluation",
   "Stock scoring and investment suitability",
 ],
-url: "http://localhost:5002",
+url: "http://127.0.0.1:5002",
   },
   {
     id: "company-personalized-analysis",
